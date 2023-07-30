@@ -43,6 +43,12 @@ Starting Listener...
 Bookstore Server Started...
 ```
 
+After the test, shutdown the mongo server
+
+```bash
+docker-compose down
+```
+
 ## Testing the bookstore server
 
 PostBook request for the endpoint `0.0.0.0:9090`:
