@@ -1,0 +1,34 @@
+// protoc --go_out=. --go_opt=paths=source_relative --go-grpc_out=. --go-grpc_opt=paths=source_relative book.proto
+
+syntax = "proto3";
+
+package book;
+
+option go_package = "github.com/yokawasa/grpc-bookstore";
+
+service Bookstore {
+    rpc PostBook(BookRequest) returns (BookResponse);
+    rpc GetBook(GetBookReq) returns (BookResponse);
+    rpc UpdateBook(BookRequest) returns (BookResponse);
+    rpc DeleteBook(GetBookReq) returns (DeleteBookRes);
+    rpc GetAllBooks(GetAllReq) returns (GetAllResponse);
+}
+
+message Book {
+    string bookID= 1;
+    string bookName = 2;
+    string category = 3;
+    string author = 4;
+}
+
+message BookRequest {Book book = 1;} 
+
+message BookResponse {Book book = 1;}
+
+message GetBookReq {string id = 1;}
+
+message DeleteBookRes {int64 deleted = 1;}
+
+message GetAllReq {};
+
+message GetAllResponse {repeated Book book = 1;}
