@@ -6,13 +6,13 @@ Simple Bookstore CRUD service using gRPC and mongoDB
 Start mongoDB server using docker-compose
 
 ```bash
-docker-compose up -d
+docker compose up -d
 ```
 
 Check if the server is running by `docker-compose ps`
 
 ```bash
-docker-compose ps
+docker compose ps
 
 NAME                         IMAGE               COMMAND                  SERVICE             CREATED             STATUS              PORTS
 grpc-bookstore-db-client-1   mongo-express       "tini -- /docker-ent…"   db-client           5 minutes ago       Up 11 seconds       0.0.0.0:8081->8081/tcp
@@ -46,7 +46,7 @@ Bookstore Server Started...
 After the test, shutdown the mongo server
 
 ```bash
-docker-compose down
+docker compose down
 ```
 
 ## Testing the bookstore server
